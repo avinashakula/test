@@ -59,23 +59,49 @@ form.addEventListener("submit", function(e){
 
 var requestDetails = function(){
     
-    const reqDetails = async () => {
+    // wrap the above code inside a new promise
+    const apiRequest = (method, url) => {
+        const promise = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.responseType = 'json';
+        xhr.onload = () => {
+            resolve(xhr.response);
+        }
+        xhr.send();
+        })
+        return promise;
+    }
+    // call the promise method to get users
+    function getUsers(){
+        apiRequest('GET', 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=avi@gmail.com')
+        .then(responseData => {
+        console.log(responseData);
+        })
+    }
+    getUsers();
+
+
+    
+    /*const reqDetails = async () => {
         console.log("Fetching Details..");
         let properEmail = document.getElementById('searchBar').value;
         var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
+        //var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com';
         try {
             console.log(requestURL);
             const reqDetail = await fetch(requestURL);
-            const data = await reqDetail.text();
+            const data = await reqDetail.json();
             return data;
         } catch(e){
-            return e.message
+            console.log(e.message);
+            return e.message;
         }
     }
     
     reqDetails().then(data => {
         console.log(data);
-        /*var landingCoursesData = "";
+        var landingCoursesData = "";
         for( var x in data){
             landingCoursesData += "<div class='col-md-3'><h4 class='LandingCourseHeads'>"+x+"</h4><ul>";
             var xObj = data[x];
@@ -86,8 +112,8 @@ var requestDetails = function(){
             }
             landingCoursesData += "</ul><a href='"+serverProtocol+"://lepakshifixit.com/category.php?id="+xObj[y]['mcid']+"' class='btn btn btn-xs btn-danger'><span class='glyphicon glyphicon-resize-full'></span> More</a></div>";
         }	
-        document.getElementById("landingCoursesList").innerHTML = landingCoursesData;*/
-    });
+        document.getElementById("landingCoursesList").innerHTML = landingCoursesData;
+    });*/
 
 
 }

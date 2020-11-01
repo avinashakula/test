@@ -64,10 +64,10 @@ form.addEventListener("submit", function(e){
     if( isEmailValid ){
 
         if( requestDetails() ){
-            //location.href='result.html?status='+true;
+            location.href='result.html?status='+true;
 
         }else{
-            //location.href='result.html?status='+false;
+            location.href='result.html?status='+false;
         }
         
     }else{

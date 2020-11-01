@@ -10,21 +10,40 @@ onMail = function(em){
 offMail = function(em){
    if( em.length <= 0 || em=="" ){
     document.getElementById('emailLabel').classList.remove('focusText', 'error')
-   }
-    
+   }    
 }
 
 email.addEventListener('input', validate); // Adding event listener validate when an input provides
 
 // validate function when email input provides by user
 function validate(e){
+
+
     let emailId = e.target.value;
     var emailLabel = document.getElementById('emailLabel');
+    var emailInput = document.getElementById('searchBar');
+    console.log(emailId.length);
+    if( emailId.length > 0 ){
+        emailLabel.classList.add('labelVisibility');
+        emailInput.classList.add('inputPosition');
+
+    }else{
+        emailLabel.classList.remove('labelVisibility');
+        emailInput.classList.remove('inputPosition');
+        emailInput.classList.remove('inputPositionHorizontal');
+    }
+    
     if( validateEmail(emailId) ){
         emailLabel.classList.remove('error');
+        //emailLabel.classList.remove('labelVisibility');
+        emailInput.classList.add('inputPosition');
+        emailInput.classList.add('inputPositionHorizontal');
+        emailLabel.innerText = "EMAIL";
         isEmailValid = true;
-    }else{
-        isEmailValid = false;
+    }else{        
+        emailLabel.innerText = "Please add a valid email address";
+        emailInput.classList.remove('inputPositionHorizontal');
+        isEmailValid = false;        
         emailLabel.classList.add('error');
     }
 }
@@ -52,69 +71,31 @@ form.addEventListener("submit", function(e){
         }
         
     }else{
-        alert('Invalid Email So unable to send');
+
+        document.getElementById('emailLabel').innerText = 'Please add a valid email address';
     }
     
 });
 
-var requestDetails = function(){
-    
-    // wrap the above code inside a new promise
-    const apiRequest = (method, url) => {
-        const promise = new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.responseType = 'json';
-        xhr.onload = () => {
-            resolve(xhr.response);
-        }
-        xhr.send();
-        })
-        return promise;
-    }
-    // call the promise method to get users
-    function getUsers(){
-        apiRequest('GET', 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=avi@gmail.com')
-        .then(responseData => {
-        console.log(responseData);
-        })
-    }
-    getUsers();
-
-
-    
-    /*const reqDetails = async () => {
+var requestDetails = function(){    
+   
+    const reqDetails = async () => {
         console.log("Fetching Details..");
         let properEmail = document.getElementById('searchBar').value;
         var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
-        //var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com';
-        try {
-            console.log(requestURL);
-            const reqDetail = await fetch(requestURL);
-            const data = await reqDetail.json();
-            return data;
-        } catch(e){
-            console.log(e.message);
-            return e.message;
-        }
-    }
-    
-    reqDetails().then(data => {
-        console.log(data);
-        var landingCoursesData = "";
-        for( var x in data){
-            landingCoursesData += "<div class='col-md-3'><h4 class='LandingCourseHeads'>"+x+"</h4><ul>";
-            var xObj = data[x];
-            
-            for( var y in xObj ){
-                //console.log(xObj[y]);
-                landingCoursesData += "<li class='landingLinks'><span class='glyphicon glyphicon-chevron-right'></span> <a href='course.php?id="+xObj[y]['id']+"&category="+xObj[y]['mcid']+"'>"+xObj[y]['title']+"</a></li>";
-            }
-            landingCoursesData += "</ul><a href='"+serverProtocol+"://lepakshifixit.com/category.php?id="+xObj[y]['mcid']+"' class='btn btn btn-xs btn-danger'><span class='glyphicon glyphicon-resize-full'></span> More</a></div>";
-        }	
-        document.getElementById("landingCoursesList").innerHTML = landingCoursesData;
-    });*/
+       
+        const reqDetail = await fetch(requestURL, {method:'get', mode:'no-cors'});
+        const data = await reqDetail.json();
+        return data;        
+    } 
 
+    reqDetails().then(data => {
+        console.log(data);        
+    });
+
+    reqDetails().catch(err => {
+        console.log(err);        
+    });
 
 }
 

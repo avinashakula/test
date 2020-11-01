@@ -1,6 +1,10 @@
 @font-face {
   font-family: 'HelveticaNeue-Bold';
-  src: url('FontsFree-Net-HelveticaNeueBold.ttf')  format('truetype') /* Safari, Android, iOS */
+  src: url('FontsFree-Net-HelveticaNeueBold.ttf')  format('truetype')
+}
+@font-face {
+  font-family: 'HelveticaNeue';
+  src: url('HelveticaNeue Light.ttf')  format('truetype')
 }
 
 *{
@@ -241,6 +245,18 @@ form{
     background-color: #004A80;
     
 }
+.userProfileImage{
+    width:90px;
+    height:90px;
+    border-radius: 100%;
+    background-color: #004A80;
+    margin:0 auto;
+    margin-top:25px
+}
+.userProfileImage img{
+    width: 40px;
+    margin-top: 25px;
+}
 #services .service .numbers span{
     font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 48px;
@@ -279,6 +295,82 @@ form{
  
 /* Content2 ends */
 
+
+/* Content3 starts */
+    #content3{
+        padding:25px;
+    }
+    #content3 table{
+        margin: 15px;
+    }
+    #content3 table table td{
+        width:50%
+    }
+    #content3 table td{
+        padding-bottom:15px;
+        vertical-align: top;
+    }
+    #leftTable{
+        width:120px;
+        text-align: center;
+    }
+    #content3 h2{
+        font-family: HelveticaNeue-Bold;
+        font-size: 52px;
+        color: #004A80;
+        letter-spacing: 0;
+        text-align: center;
+        margin-bottom:15px
+    }
+    #content3 h3{
+        font-family: HelveticaNeue-Bold;
+        font-size: 32px;
+        color: #004A80;
+        letter-spacing: 0;
+    }
+    #content3 h4{
+        font-family: HelveticaNeue-Bold;
+        font-size: 22px;
+        color: #004A80;
+        letter-spacing: 0;
+    }
+    #content3 a{
+        font-family: HelveticaNeue;
+        font-size: 18px;
+        color: #004A80;
+        letter-spacing: 0;
+        line-height: 26px;
+        display: block;
+        text-decoration: none;
+    }
+    #resultP{
+        margin-bottom:30px
+    }
+    #content3 p{
+        font-family: HelveticaNeue;
+        font-size: 24px;
+        color: #000000;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 32px;
+        
+    }
+    #content3 td p{
+        font-family: HelveticaNeue;
+        font-size: 18px;
+        color: #000000;
+        letter-spacing: 0;
+        line-height: 26px;
+        text-align: left;
+    }
+    #content3 #resultBlock{
+        background: #FFFFFF;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+        border-radius: 30px;
+        border-radius: 30px;
+    }
+
+/* Content3 ends */
 
 /* Footer starts */
 #footer{

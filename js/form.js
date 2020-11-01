@@ -1,5 +1,5 @@
 const form = document.querySelector("#search-form"); // select form using Id
-let email = form.elements.namedItem('email'); // select email input field
+var email = form.elements.namedItem('email'); // select email input field
 var isEmailValid = false;
 
 
@@ -43,12 +43,50 @@ function validateEmail(inputText){
 form.addEventListener("submit", function(e){
     e.preventDefault();
     if( isEmailValid ){
-        alert('Submitted');
+
+        if( requestDetails() ){
+            //location.href='result.html?status='+true;
+
+        }else{
+            //location.href='result.html?status='+false;
+        }
+        
     }else{
         alert('Invalid Email So unable to send');
     }
     
 });
+
+var requestDetails = function(){
+    
+    const reqDetails = async () => {
+        console.log("Fetching Details..");
+        let properEmail = document.getElementById('searchBar').value;
+        //let requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
+        let requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com';
+        const reqDetail = await fetch(requestURL);
+        const data = await reqDetail.json();
+        return data;
+    }
+    
+    reqDetails().then(data => {
+        console.log(data);
+        var landingCoursesData = "";
+        /*for( var x in data){
+            landingCoursesData += "<div class='col-md-3'><h4 class='LandingCourseHeads'>"+x+"</h4><ul>";
+            var xObj = data[x];
+            
+            for( var y in xObj ){
+                //console.log(xObj[y]);
+                landingCoursesData += "<li class='landingLinks'><span class='glyphicon glyphicon-chevron-right'></span> <a href='course.php?id="+xObj[y]['id']+"&category="+xObj[y]['mcid']+"'>"+xObj[y]['title']+"</a></li>";
+            }
+            landingCoursesData += "</ul><a href='"+serverProtocol+"://lepakshifixit.com/category.php?id="+xObj[y]['mcid']+"' class='btn btn btn-xs btn-danger'><span class='glyphicon glyphicon-resize-full'></span> More</a></div>";
+        }	
+        document.getElementById("landingCoursesList").innerHTML = landingCoursesData;*/
+    });
+
+
+}
 
 
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'HelveticaNeue-Bold';
+  src: url('FontsFree-Net-HelveticaNeueBold.ttf')  format('truetype') /* Safari, Android, iOS */
+}
+
 *{
     padding:0;
     margin:0
@@ -10,10 +15,12 @@
 #header{
     height: 65px;
     background-color: #004A80;
+    padding-left: 15px; 
+    padding-right: 15px;  
 }
 #content{
     background-color: #004A80;
-    padding:27px 0 57px 0;
+    padding:0 0 57px 0;
 }
 #rightButtons{
     float:right;
@@ -35,9 +42,12 @@
     background-color: #004A80;
     color:white;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold
 }
-
+#content .containerBlock p{
+    padding-left: 25px;
+    padding-right: 25px;
+}
 #content h2{
     font-size:52px;
     line-height: 64px;
@@ -58,15 +68,21 @@
     box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
     border-radius: 3px;
     border-radius: 3px;
-    width:780px;
+    /*width:780px;*/
+    width:80%;
     height:70px;
     outline:none;
     border:none;
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 16px;
     color: #9B9B9B;
     letter-spacing: 2px;
     line-height: 18px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    padding: 25px 15px 5px 13px;
+    float: left;
+    margin-left: -37px;
 }
 button{
     width:180px;
@@ -76,23 +92,101 @@ button{
     border-radius: 6px;
     border-radius: 6px;
     border:none;
-    margin-left:15px
+    margin-left:15px;
+    font-size: 24px;
+    color: #004A80;
+    letter-spacing: 1px;
+    text-align: center;
+    cursor:pointer;
 }
+button:hover{
+    background: #F2DA56;
+    box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+    border-radius: 6px;
+    border-radius: 6px;
+}
+button:active{
+    background: #F6BC25;
+    box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+    border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+/*
+input:focus::-webkit-input-placeholder {
+    color: rgb(36, 25, 27);
+    position:relative;
+    top: -20px;
+    font-size: 10px;
+    visibility: visible;
+  }
+  ::-moz-placeholder 
+    color: pink;
+  }
+  :-ms-input-placeholder {
+    color: pink;
+  }
+  :-moz-placeholder {
+    color: pink;
+  }
+  */
+
+  form div{
+      width:100%;
+  }
+
+
+  form div label{
+    left: 15px;
+    top: 28px;
+    position:relative;
+    color: silver;
+    font-size: 12px;
+    float: left;
+  }
+  .focusText{
+    left: 15px;
+    top: 10px !important;  
+  }
+
+
+
+
+
+
+
+
+
+
+
 #formHint{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 16px;
     color: #F6BC25;
     letter-spacing: 0;
     text-align:left;
     display:block;
+    padding-left: 25px;
+    padding-right: 25px;
+    /*padding-left:25px;
+    padding-right:25px;*/
 }
 #formHint img{
     margin-right:5px;    
     width:15px;
 }
 form{
-    margin:29px 0
+    margin:29px 0;
+    background: rgba(0,0,0,0.1); /* To test */
 }
+
 
 /* Content ends */
 
@@ -100,9 +194,11 @@ form{
 /* Content2 starts */
 #content2{
     background-image: linear-gradient(0deg, #E6E6E6 0%, #FFFFFF 100%);
+    padding-left: 25px;
+    padding-right: 25px;
 }
 #content2 .containerBlock h2{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 52px;
     color: #004A80;
     letter-spacing: 0;
@@ -111,7 +207,7 @@ form{
     margin-bottom:20px
 }
 #content2 .containerBlock p{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family:HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 22px;
     color: #4A4A4A;
     letter-spacing: 0;
@@ -132,7 +228,7 @@ form{
     
 }
 #services .service .numbers span{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 48px;
     color: #F6BC25;
     letter-spacing: 0;
@@ -145,13 +241,13 @@ form{
     padding:0 30px 0 20px
 }
 #services .service .information h4{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 22px;
     color: #004A80;
     letter-spacing: 0;
 } 
 #services .service .information p{
-    font-family: Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 18px;
     color: #000000;
     letter-spacing: 0;
@@ -171,33 +267,196 @@ form{
 
 
 /* Footer starts */
+#footer{
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    
+}
 #footer .containerBlock{
     padding:14px 0;
-    font-family:  Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family:  HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 15px;
     color: #999999;
     letter-spacing: 0;
-    line-height: 20px;
+    line-height: 20px;    
 }
+#footer .containerBlock .footerInfo{
+    width: 70%;
+    float: left;
+}    
+#footer .containerBlock .bottomLinks{
+    width: 20%;
+    float: right;
+    padding-top: 10px;
+    text-align: center;
+    display: table;
+    display: table-cell;
+    vertical-align: middle;   
+    line-height: 50px; 
+}    
 #footer .containerBlock p{
     float: left;
 } 
 
 #footer .bottomLinks a{
-    font-family:  Arial, Helvetica, sans-serif; /*HelveticaNeue-Bold*/
+    font-family:  HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
     font-size: 14px;
     color: #004A80;
     letter-spacing: 0;
     text-decoration: none;
+
+    
 }  
+.error{
+    color:red
+}
 /* Footer ends */
 
 /* Responsive design starts */
+@media( max-width:1440px ){
+    .containerBlock{
+        max-width: 1440px;  
+        width: 100%;          
+    }
+    #searchBar{
+        width:77%
+    }    
+    button{
+        width:20%;
+        margin-left:2% !important
+    }
+    #formBlock{        
+        padding-left:25px;
+        padding-right:25px;
+    }
+}    
 @media( max-width:768px ){
     .containerBlock{
-        width: 768px;
+        max-width: 768px;  
+        width: 100%;          
+    }
+    #content h2{
+        font-size: 48px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+    } 
+    #content p{
+        font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
+        font-size: 20px;
+        color:white;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 25px;
+    } 
+    #searchBar{
+        width:72%
+    }    
+    button{
+        width:25%;
+        margin-left:2% !important
+    }
+    #services .service .numbers{
+        width: 63px;
+        height: 63px;
+    }
+    #services .service .numbers span{
+        font-size: 33.6px;
+        line-height: 41px;
+    }
+    #services .service .information h4{
+        font-size: 20px;
+    }
+    #services .service .information p{
+        font-size: 16px;
+    }
+   
+    .numberBlocks{
+        vertical-align: top !important;
+    }
+   
+}
+
+
+@media( max-width:320px ){
+    .containerBlock{
+        max-width: 320px;  
+        width: 100%;          
+    }
+    #content h2{
+        font-size: 38px !important;
+        line-height: 46px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    } 
+    #content2 .containerBlock h2{
+        font-size: 38px !important;
+        line-height: 46px;
         
     }
+    #content p{
+        font-family:HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
+        font-size: 18px;
+        color:white;
+        letter-spacing: 0;
+        text-align: center;
+        line-height: 23px;
+    } 
+    #content2 .containerBlock p{
+        font-size: 18px;
+        line-height: 28px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #searchBar{
+        width:100%;
+        margin-bottom: 5%;
+    }    
+    button{
+        width:100%;
+        margin-left: 0 !important;
+    }
+    #services .service table tr td:first-child{
+        vertical-align: top !important;
+    }
+    #services .service .numbers{
+        width: 63px;
+        height: 63px;
+    }
+    #services .service .numbers span{
+        font-size: 33.6px;
+        line-height: 41px;
+    }
+    #services .service .information h4{
+        font-size: 20px;
+    }
+    #services .service .information p{
+        font-size: 16px;
+        line-height: 24px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .numberBlocks{
+        vertical-align: top !important;
+    }
+   
+    #services .service{
+        width:100%
+    }
+
+    #footer .containerBlock .footerInfo{
+       width: 100%;
+       font-size:15px;
+    } 
+    
+    #footer .containerBlock .bottomLinks{
+        width: 100%;
+        
+    } 
 }
 /* Responsive design ends */
 

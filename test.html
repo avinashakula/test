@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+</head>
+<body>
+    
+</body>
+
+<script>
+
+
+/*
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText);
+      let response = JSON.parse(xhr.responseText);
+      console.log(response);        
+    }else{
+      console.log("error");
+    }
+};
+
+xhr.open('GET', 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com', true);
+xhr.send();*/
+
+
+let promise = fetch('https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com', {
+  method: "GET", // POST, PUT, DELETE, etc.
+  headers: {
+    "Content-Type": "application/json; charset=utf-8" // for a string body, depends on body
+  },
+  referrer: "http://127.0.0.1:5500/test.html", // "" for no-referrer, or an url from the current origin
+  referrerPolicy: "strict-origin-when-cross-origin", // no-referrer, origin, same-origin...
+  mode: "no-cors", // same-origin, no-cors
+  credentials: "omit", // omit, include
+  cache: "default", // no-store, reload, no-cache, force-cache, or only-if-cached
+  redirect: "follow", // manual, error
+  integrity: "", // a hash, like "sha256-abcdef1234567890"
+  keepalive: true, // true
+  signal: undefined, // AbortController to abort request
+  window: window // null
+});
+promise.then(function(response) {
+        console.log(response);
+    });
+
+
+
+
+
+/*
+async function read() {
+   let r= await (await fetch('https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com', {mode:'no-cors'})).json();
+   console.log(r);
+}
+
+read();*/
+
+</script>
+</html>

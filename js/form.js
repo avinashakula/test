@@ -62,17 +62,21 @@ var requestDetails = function(){
     const reqDetails = async () => {
         console.log("Fetching Details..");
         let properEmail = document.getElementById('searchBar').value;
-        //let requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
-        let requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com';
-        const reqDetail = await fetch(requestURL);
-        const data = await reqDetail.json();
-        return data;
+        var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
+        try {
+            console.log(requestURL);
+            const reqDetail = await fetch(requestURL);
+            const data = await reqDetail.text();
+            return data;
+        } catch(e){
+            return e.message
+        }
     }
     
     reqDetails().then(data => {
         console.log(data);
-        var landingCoursesData = "";
-        /*for( var x in data){
+        /*var landingCoursesData = "";
+        for( var x in data){
             landingCoursesData += "<div class='col-md-3'><h4 class='LandingCourseHeads'>"+x+"</h4><ul>";
             var xObj = data[x];
             

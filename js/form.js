@@ -115,18 +115,24 @@ var requestDetails = function(){
                 var properEmail = document.getElementById('searchBar').value;
                 var urlField = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
             e.preventDefault();
-            doCORSRequest({
-                method: 'GET',
-                url: urlField,
-            }, function printResult(result) {
-                localStorage.setItem('mailDetails', result);
-                var emailDetails = JSON.parse(localStorage.getItem('mailDetails'));
-                if( emailDetails.length == 0 ){
-                    location.href='result.html?status='+false;
-                }else{
-                    location.href='result.html?status='+true;
-                }
-            });
+
+            if( isEmailValid == true ){
+                doCORSRequest({
+                    method: 'GET',
+                    url: urlField,
+                }, function printResult(result) {
+                    localStorage.setItem('mailDetails', result);
+                    var emailDetails = JSON.parse(localStorage.getItem('mailDetails'));
+                    if( emailDetails.length == 0 ){
+                        location.href='result.html?status='+false;
+                    }else{
+                        location.href='result.html?status='+true;
+                    }
+                });
+            }else{
+                this.style.disable = true;
+            }
+            
             };
         })();
 

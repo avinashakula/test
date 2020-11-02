@@ -119,7 +119,7 @@ var requestDetails = function(){
                 method: 'GET',
                 url: urlField,
             }, function printResult(result) {
-                localStorage.setItem('mailDetails', JSON.parse(result));
+                localStorage.setItem('mailDetails', result);
                 location.href='result.html?status='+true;
             });
             };

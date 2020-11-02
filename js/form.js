@@ -59,15 +59,16 @@ function validateEmail(inputText){
 }
 
 // When form submits
+/*
 form.addEventListener("submit", function(e){
     e.preventDefault();
     if( isEmailValid ){
 
         if( requestDetails() ){
-            location.href='result.html?status='+true;
+            //location.href='result.html?status='+true;
 
         }else{
-            location.href='result.html?status='+false;
+            //location.href='result.html?status='+false;
         }
         
     }else{
@@ -75,29 +76,54 @@ form.addEventListener("submit", function(e){
         document.getElementById('emailLabel').innerText = 'Please add a valid email address';
     }
     
-});
+});*/
 
 var requestDetails = function(){    
    
-    const reqDetails = async () => {
-        console.log("Fetching Details..");
-        let properEmail = document.getElementById('searchBar').value;
-        var requestURL = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
-       
-        const reqDetail = await fetch(requestURL, {method:'get', mode:'no-cors'});
-        const data = await reqDetail.json();
-        return data;        
-    } 
+    
+     console.log("Fetching Details..");
+        
+     
 
-    reqDetails().then(data => {
-        console.log(data);        
-    });
-
-    reqDetails().catch(err => {
-        console.log(err);        
-    });
+    
 
 }
+
+
+
+
+        
+        var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+        function doCORSRequest(options, printResult) {
+            var x = new XMLHttpRequest();
+            x.open(options.method, cors_api_url + options.url);
+            x.onload = x.onerror = function() {
+            printResult(        
+                (x.responseText || '')
+            );
+            };
+            if (/^POST/i.test(options.method)) {
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            }
+            x.send(options.data);
+        }
+
+        // Bind event
+        (function() {
+            
+            document.getElementById('get').onclick = function(e) {
+                var properEmail = document.getElementById('searchBar').value;
+                var urlField = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
+            e.preventDefault();
+            doCORSRequest({
+                method: 'GET',
+                url: urlField,
+            }, function printResult(result) {
+                console.log(result);        
+                console.log(JSON.parse(result));
+            });
+            };
+        })();
 
 
 

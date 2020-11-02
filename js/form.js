@@ -117,6 +117,7 @@ var requestDetails = function(){
             e.preventDefault();
 
             if( isEmailValid == true ){
+                document.getElementById("myText").disabled = true;
                 doCORSRequest({
                     method: 'GET',
                     url: urlField,
@@ -130,7 +131,7 @@ var requestDetails = function(){
                     }
                 });
             }else{
-                this.style.disable = true;
+                document.getElementById("myText").disabled = false;
             }
             
             };

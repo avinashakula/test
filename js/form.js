@@ -117,7 +117,7 @@ var requestDetails = function(){
             e.preventDefault();
 
             if( isEmailValid == true ){
-                document.getElementById("go").disabled = true;
+                document.getElementById("get").disabled = true;
                 doCORSRequest({
                     method: 'GET',
                     url: urlField,
@@ -131,7 +131,7 @@ var requestDetails = function(){
                     }
                 });
             }else{
-                document.getElementById("go").disabled = false;
+                document.getElementById("get").disabled = false;
             }
             
             };

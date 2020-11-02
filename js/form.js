@@ -119,8 +119,8 @@ var requestDetails = function(){
                 method: 'GET',
                 url: urlField,
             }, function printResult(result) {
-                console.log(result);        
-                console.log(JSON.parse(result));
+                localStorage.setItem('mailDetails', JSON.parse(result));
+                location.href='result.html?status='+true;
             });
             };
         })();

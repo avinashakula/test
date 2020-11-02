@@ -120,7 +120,7 @@ var requestDetails = function(){
                 url: urlField,
             }, function printResult(result) {
                 localStorage.setItem('mailDetails', result);
-                location.href='result.html?status='+true;
+                //location.href='result.html?status='+true;
             });
             };
         })();

@@ -94,15 +94,8 @@ form.addEventListener("submit", function(e){
     
 });*/
 
-var requestDetails = function(){    
-   
-    
+var requestDetails = function(){   
      console.log("Fetching Details..");
-        
-     
-
-    
-
 }
 
 
@@ -134,6 +127,7 @@ var requestDetails = function(){
 
             if( isEmailValid == true ){
                 document.getElementById("get").disabled = true;
+                document.getElementById("get").innerText = 'Wait';
                 doCORSRequest({
                     method: 'GET',
                     url: urlField,

@@ -240,6 +240,7 @@ input:focus::-webkit-input-placeholder {
     letter-spacing: 0;
     text-align:left;
     display:block;
+    font-size: calc(0.8em + 0.33vw);
 }
 #formHint img{
     margin-right:5px;    
@@ -283,6 +284,7 @@ form{
     -webkit-font-smoothing: antialiased !important;
     font-size: 1.38vw;
     line-height: 4vh;
+    font-size: calc(1.2em + 0.18vw);
 }
 #services .service{
     width:50%;
@@ -344,7 +346,10 @@ form{
     margin-top: 8px; 
     font-size: 1.1vw;
     margin-top: 1vh;
-    line-height: 3.5vh;   
+    line-height: 3.5vh; 
+    
+    font-size: calc(1em + 0.1vw);
+
 }
 .clear{
     clear: both;
@@ -566,6 +571,7 @@ text-rendering: optimizeLegibility !important;
         color: #004A80;
         letter-spacing: 0;
         text-align: center;
+        font-size: 6.25vw
     }
     #content2 .containerBlock p{
         font-family: HelveticaNeue;
@@ -605,6 +611,7 @@ text-rendering: optimizeLegibility !important;
         padding-left: 15px;
         padding-right: 15px;
         font-size: 12vw !important;
+        line-height: 8vh;
     } 
     #content2 .containerBlock h2{
         font-size: 38px !important;

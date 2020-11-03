@@ -3,6 +3,7 @@ var email = form.elements.namedItem('email'); // select email input field
 var isEmailValid = false;
 
 
+
 // onFocus Input Animation
 onMail = function(em){
     document.getElementById('emailLabel').classList.add('focusText')
@@ -14,14 +15,26 @@ offMail = function(em){
 }
 
 email.addEventListener('input', validate); // Adding event listener validate when an input provides
+email.addEventListener('focus', onInputFocus); // Adding event listener validate when an input provides
+email.addEventListener('blur', onInputBlur); // Adding event listener validate when an input provides
 
+function onInputFocus(e){
+    let emailInput = document.getElementById('searchBar');
+    emailInput.classList.add("searchInputfocus");
+}
+function onInputBlur(e){
+    let emailInput = document.getElementById('searchBar');
+    emailInput.classList.remove("searchInputfocus");
+}
 // validate function when email input provides by user
 function validate(e){
-
+    
 
     let emailId = e.target.value;
     var emailLabel = document.getElementById('emailLabel');
     var emailInput = document.getElementById('searchBar');
+    emailInput.classList.add("searchInputfocus");
+    emailInput.classList.remove("searchInputError");
     console.log(emailId.length);
     if( emailId.length > 0 ){
         emailLabel.classList.add('labelVisibility');
@@ -35,12 +48,15 @@ function validate(e){
     
     if( validateEmail(emailId) ){
         emailLabel.classList.remove('error');
+       
         //emailLabel.classList.remove('labelVisibility');
         emailInput.classList.add('inputPosition');
         emailInput.classList.add('inputPositionHorizontal');
         emailLabel.innerText = "EMAIL";
         isEmailValid = true;
-    }else{        
+    }else{    
+        emailInput.classList.remove("searchInputfocus");
+        emailInput.classList.add("searchInputError");    
         emailLabel.innerText = "Please add a valid email address";
         emailInput.classList.remove('inputPositionHorizontal');
         isEmailValid = false;        
@@ -140,3 +156,7 @@ var requestDetails = function(){
 
 
 
+        // var emailInput1 = document.getElementById('searchBar');
+        // emailInput1.onfocus =  function(){
+        //     emailInput1.classList.add('searchInputfocus');
+        // }

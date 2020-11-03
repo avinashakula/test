@@ -323,7 +323,7 @@ form{
     line-height: 58px;
     display: block;
     padding-top: 14px;   
-    padding-top: 1vh;
+    padding-top: 0.5vh;
     font-size: 3vw;
     line-height: inherit;
 }    
@@ -583,7 +583,10 @@ text-rendering: optimizeLegibility !important;
     #footer .containerBlock .footerInfo{
         width:78%
     }
-   
+    #services .service .numbers span{
+        padding-top: 1vh;
+    }   
+        
 }
 
 @media( max-width:600px ){

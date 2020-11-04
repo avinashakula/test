@@ -24,11 +24,10 @@ function myApp(formId, input, emailId, emailLabel){
         this.emailId.classList.add(rClassesList[0]);
     },
     this.validate = function(){
-        let emailId = this.emailId.value;
         this.emailId.classList.add("searchInputfocus");
         this.emailId.classList.remove("searchInputError");
 
-        if( emailId.length > 0 ){
+        if( this.emailId.value ){
             this.label.classList.add('labelVisibility');
             this.emailId.classList.add('inputPosition');    
         }else{

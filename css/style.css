@@ -558,11 +558,47 @@ text-rendering: optimizeLegibility !important;
 .error{
     color:red
 }
+
+
+.circle{
+    background-color: #004A80;
+    width: 5vw;
+    height: 5vw;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle p{
+    color: #F6BC25 !important;
+    font-size: 3vw !important;
+    font-family: HelveticaNeue-Bold !important;
+    letter-spacing: 0 !important;
+    text-align: center;
+}
+
+
 /* Footer ends */
 
 /* Responsive design starts */
 @media( max-width:1440px ){
     
+    .circle{
+        background-color: #004A80;
+        width: 6vw;
+        height: 6vw;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 3vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
     .containerBlock{
         max-width: 1440px;  
         width: 80%;          
@@ -619,6 +655,22 @@ text-rendering: optimizeLegibility !important;
     }
 }    
 @media( max-width:768px ){
+    .circle{
+        background-color: #004A80;
+        width: 8vw !important;
+        height: 8vw !important;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 3vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
     .containerBlock{
         max-width: 768px;  
         width: 100%;          
@@ -810,6 +862,22 @@ text-rendering: optimizeLegibility !important;
     }    
 } 
 @media( max-width:540px ){
+    .circle{
+        background-color: #004A80;
+        width: 13vw !important;
+        height: 13vw !important;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 6vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
     #services .service{
         width:100%
     }
@@ -830,6 +898,22 @@ text-rendering: optimizeLegibility !important;
     }
 }    
 @media( max-width:510px ){
+    .circle{
+        background-color: #004A80;
+        width: 13vw !important;
+        height: 13vw !important;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 6vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
     #rightTable .td{
         width:100% !important;
         display:block !important
@@ -864,10 +948,10 @@ text-rendering: optimizeLegibility !important;
         line-height: 25px !important;
     }
     .left{
-        width:20%
+        width:15%
     }
     .right{
-        width:80%
+        width:75%
     }  
     
     
@@ -916,6 +1000,22 @@ text-rendering: optimizeLegibility !important;
    
 }    
 @media( max-width:320px ){
+    .circle{
+        background-color: #004A80;
+        width: 16vw !important;
+        height: 16vw !important;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 6vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
     .containerBlock{
         max-width: 320px;  
         width: 100%;          
@@ -1000,12 +1100,6 @@ text-rendering: optimizeLegibility !important;
     #leftTable{
         display:none !important
     }
-
-
-
-
-
-
 
     #content3{
         padding:25px;
@@ -1120,10 +1214,6 @@ text-rendering: optimizeLegibility !important;
         font-size:calc(0.95em + 0.33vw)
     }   
     
-    
-
-
-
     #resultP{
         font-family: HelveticaNeue;
         font-size: 20px !important;
@@ -1166,6 +1256,12 @@ text-rendering: optimizeLegibility !important;
     }
     #rightTable div{
         width:100%
+    }
+    .left{
+        width:20%
+    } 
+    .right{
+        width:80%
     } 
 }
 

@@ -1069,6 +1069,7 @@ text-rendering: optimizeLegibility !important;
     }
     button{
         height: 9vw;
+        font-size: 5vw;
     }
     .inputPosition{
         padding:30px 15px 15px 13px !important

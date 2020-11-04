@@ -17,6 +17,9 @@
 h2{
     font-size:52px
 }
+.numberBlocks .numbers span{
+    font-size:40px
+}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     font-family: HelveticaNeue-Bold;
     font-size: 16px;
@@ -285,6 +288,8 @@ form{
     font-size: 1.38vw;
     line-height: 4vh;
     font-size: calc(1.2em + 0.18vw);
+    font-size: calc(1.1em + 0.18vw);
+    font-size: calc(1.2em + 0.18vw);
 }
 #services .service{
     width:50%;
@@ -335,7 +340,8 @@ form{
     font-size: 22px;
     color: #004A80;
     letter-spacing: 0;
-    font-size: 1.38vw;
+    
+    font-size: 1.50vw;
 } 
 #services .service .information p{
     font-family: HelveticaNeue; /*HelveticaNeue-Bold*/
@@ -447,6 +453,7 @@ form{
     padding-left: 25px;
     padding-right: 25px;
     box-sizing: border-box;
+    border-bottom: 1px solid #ececec;
     
 }
 #footer .containerBlock{
@@ -499,16 +506,19 @@ text-rendering: optimizeLegibility !important;
 
 /* Responsive design starts */
 @media( max-width:1440px ){
+    
     .containerBlock{
         max-width: 1440px;  
-        width: 100%;          
+        width: 80%;          
     }
     #searchBar{
-        width:77%
+        width:77%;
+        height: calc(4.2em + 0.18vw);
     }    
     button{
         width:20%;
-        margin-left:2% !important
+        height:calc(2.8em + 0.18vw);
+        margin-left:2% !important;
     }
     #formBlock{        
         padding-left:25px;
@@ -518,6 +528,25 @@ text-rendering: optimizeLegibility !important;
     #formHint{    
         padding-left: 25px;
         padding-right: 25px;
+    }
+    .numberBlocks .numbers span{
+        font-size: 2em !important;
+        line-height: 4vw !important;
+    }
+    #services .service .information h4{
+        font-size:calc(0.75em + 1vmin)
+    }    
+    #content2 .containerBlock p{
+        font-family: HelveticaNeue;        
+        color: #4A4A4A;
+        letter-spacing: 0;        
+        font-size: 1.53vw;
+        line-height: 2.09vw;
+    }
+    #content2 .containerBlock h2{
+        font-size: 3.26vw;
+        line-height: 5vw;
+        margin-bottom:1.5vw
     }
 }    
 @media( max-width:768px ){
@@ -539,6 +568,7 @@ text-rendering: optimizeLegibility !important;
         letter-spacing: 0;
         text-align: center;
         line-height: 25px;
+        font-size: 2.8vw;
     } 
     #searchBar{
         width:72%
@@ -579,13 +609,20 @@ text-rendering: optimizeLegibility !important;
         color: #4A4A4A;
         letter-spacing: 0;
         line-height: 28px;
+        font-size: calc(1.16em + 0.18vw);
     }
     #footer .containerBlock .footerInfo{
         width:78%
     }
     #services .service .numbers span{
-        padding-top: 1vh;
-    }   
+        padding-top: 1.4vh;
+        
+    }  
+    
+    .numberBlocks .numbers span {
+        font-size: 2em !important;
+        line-height: inherit !important;
+    }
         
 }
 
@@ -593,12 +630,43 @@ text-rendering: optimizeLegibility !important;
     #leftTable{
         display:none !important
     }
+
+    #footer .containerBlock .footerInfo{
+        width:75%;
+    }
+    #footer .containerBlock .bottomLinks{
+        width:25%
+    }
 } 
+@media( max-width:540px ){
+    #services .service{
+        width:100%
+    }
+    #services .service .information {
+        padding: 0 0 0 20px;
+    }
+    #footer .containerBlock .footerInfo, #footer .containerBlock .bottomLinks{
+        width:100%
+    }
+}    
 @media( max-width:510px ){
     #rightTable td{
         width:100% !important;
         display:block !important
     }
+    #searchBar{
+        width:100%;
+        margin-bottom: 5%;
+    }    
+    button{
+        width:100%;
+        margin-left: 0 !important;
+    }
+    .inputPositionHorizontal{
+        margin-left: 0px !important;
+        margin-top: -15px
+    }
+   
 }    
 @media( max-width:320px ){
     .containerBlock{
@@ -628,6 +696,7 @@ text-rendering: optimizeLegibility !important;
         letter-spacing: 0;
         text-align: center;
         line-height: 23px;
+        font-size:5.7vw;
     } 
     #content2 .containerBlock p{
         font-size: 18px;
@@ -774,7 +843,29 @@ text-rendering: optimizeLegibility !important;
     #services .service .information {
         padding: 0 0 0 10px !important;
     }
+    #searchBar, button{
+        height:50px
+    }
+    button{
+        height: 8.5vh;
+    }
+    #searchBar{
+        font-size: 16px;
+        line-height: 18px;
+        margin-top: 0em;
+    }
+    .focusText {
+        left: 14px;
+        top: 12px !important;
+        line-height: 1px;
+    }
 
+    #services .service .numbers span {
+        padding-top: 0.7vh;
+    }
+    #formHint{
+        font-size:calc(0.95em + 0.33vw)
+    }    
 }
 /* Responsive design ends */
 

@@ -1,156 +1,121 @@
+
 const form = document.querySelector("#search-form"); // select form using Id
 var email = form.elements.namedItem('email'); // select email input field
 var isEmailValid = false;
 
 
+function myApp(formId, input, emailId, emailLabel){
+    this.isEmailValid = false;
+    this.formId = formId;
+    this.input = input;    
+    this.emailLabel = emailLabel; 
+    this.emailInput = document.querySelector("#"+this.formId);
+    this.emailId = document.getElementById(emailId); 
+    this.label = document.getElementById(this.emailLabel);    
+    this.emailValidator = function(){
+        var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        return this.emailId.value.match(mailformat);
+    },
+    this.onMail = function(classesList){
+        this.label.classList.add(classesList[0]); // input label effected onfocus
+        this.emailId.classList.add(classesList[1]);
+    },
+    this.offMail = function(classesList, value, rClassesList){
+        if ( value.length <= 0 || value=="" ) {this.label.classList.remove(classesList[0], classesList[1]) }  // input label effected onblur
+        this.emailId.classList.add(rClassesList[0]);
+    },
+    this.validate = function(){
+        let emailId = this.emailId.value;
+        this.emailId.classList.add("searchInputfocus");
+        this.emailId.classList.remove("searchInputError");
 
-// onFocus Input Animation
+        if( emailId.length > 0 ){
+            this.label.classList.add('labelVisibility');
+            this.emailId.classList.add('inputPosition');    
+        }else{
+            this.label.classList.remove('labelVisibility');
+            this.emailId.classList.remove('inputPosition', 'inputPositionHorizontal');
+        }
+        if( app.emailValidator() ){
+            this.label.classList.remove('error');
+            this.label.innerText = "EMAIL"; 
+            this.emailId.classList.add('inputPosition', 'inputPositionHorizontal'); 
+            this.isEmailValid = true;
+        }else{    
+            this.emailId.classList.remove('searchInputfocus', 'inputPositionHorizontal');
+            this.emailId.classList.add("searchInputError");            
+            this.label.innerText = "Please add a valid email address";
+            this.isEmailValid = false;            
+            this.label.classList.add('error');
+        }
+        
+    },
+    
+    this.searchForMail = function(){
+        // Searching for an Email
+    }
+    
+}
+    
+
+var app = new myApp("search-form", "email", "searchBar", "emailLabel"); // Object
+
+// Events & Handlers
 onMail = function(em){
-    document.getElementById('emailLabel').classList.add('focusText')
+    app.onMail(['focusText', 'searchInputfocus']);
 }
 offMail = function(em){
-   if( em.length <= 0 || em=="" ){
-    document.getElementById('emailLabel').classList.remove('focusText', 'error')
-   }    
+    app.offMail(['focusText', 'error'], em, ['searchInputfocus']);  
+}
+onValue = function(){
+    app.validate();
 }
 
-email.addEventListener('input', validate); // Adding event listener validate when an input provides
-email.addEventListener('focus', onInputFocus); // Adding event listener validate when an input provides
-email.addEventListener('blur', onInputBlur); // Adding event listener validate when an input provides
 
-function onInputFocus(e){
-    let emailInput = document.getElementById('searchBar');
-    emailInput.classList.add("searchInputfocus");
+        
+var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
+function doCORSRequest(options, printResult) {
+    var x = new XMLHttpRequest();
+    x.open(options.method, cors_api_url + options.url);
+    x.onload = x.onerror = function() {
+    printResult(        
+        (x.responseText || '')
+    );
+    };
+    if (/^POST/i.test(options.method)) {
+        x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    }
+    x.send(options.data);
 }
-function onInputBlur(e){
-    let emailInput = document.getElementById('searchBar');
-    emailInput.classList.remove("searchInputfocus");
-}
-// validate function when email input provides by user
-function validate(e){
+
+//Self Invoking a Method // Bind event
+(function() {
     
+    document.getElementById('get').onclick = function(e) {
+        let properEmail = document.getElementById('searchBar').value;
+        let urlField = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
+        e.preventDefault();
 
-    let emailId = e.target.value;
-    var emailLabel = document.getElementById('emailLabel');
-    var emailInput = document.getElementById('searchBar');
-    emailInput.classList.add("searchInputfocus");
-    emailInput.classList.remove("searchInputError");
-    console.log(emailId.length);
-    if( emailId.length > 0 ){
-        emailLabel.classList.add('labelVisibility');
-        emailInput.classList.add('inputPosition');
-
-    }else{
-        emailLabel.classList.remove('labelVisibility');
-        emailInput.classList.remove('inputPosition');
-        emailInput.classList.remove('inputPositionHorizontal');
-    }
-    
-    if( validateEmail(emailId) ){
-        emailLabel.classList.remove('error');
-       
-        //emailLabel.classList.remove('labelVisibility');
-        emailInput.classList.add('inputPosition');
-        emailInput.classList.add('inputPositionHorizontal');
-        emailLabel.innerText = "EMAIL";
-        isEmailValid = true;
-    }else{    
-        emailInput.classList.remove("searchInputfocus");
-        emailInput.classList.add("searchInputError");    
-        emailLabel.innerText = "Please add a valid email address";
-        emailInput.classList.remove('inputPositionHorizontal');
-        isEmailValid = false;        
-        emailLabel.classList.add('error');
-    }
-}
-
-// Validating Email provides by user
-function validateEmail(inputText){
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if(inputText.match(mailformat)){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-// When form submits
-/*
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-    if( isEmailValid ){
-
-        if( requestDetails() ){
-            //location.href='result.html?status='+true;
-
+        if( app.isEmailValid == true ){
+            document.getElementById("get").disabled = true;
+            document.getElementById("get").innerText = 'Wait';
+            doCORSRequest({
+                method: 'GET',
+                url: urlField,
+            }, function printResult(result) {
+                localStorage.setItem('mailDetails', result);
+                let emailDetails = JSON.parse(localStorage.getItem('mailDetails'));
+                if( emailDetails.length == 0 ){
+                    location.href='result.html?status='+false;
+                }else{
+                    location.href='result.html?status='+true;
+                }
+            });
         }else{
-            //location.href='result.html?status='+false;
+            document.getElementById("get").disabled = false;
         }
-        
-    }else{
-
-        document.getElementById('emailLabel').innerText = 'Please add a valid email address';
-    }
     
-});*/
+    };
 
-var requestDetails = function(){   
-     console.log("Fetching Details..");
-}
+})();
 
-
-
-
-        
-        var cors_api_url = 'https://cors-anywhere.herokuapp.com/';
-        function doCORSRequest(options, printResult) {
-            var x = new XMLHttpRequest();
-            x.open(options.method, cors_api_url + options.url);
-            x.onload = x.onerror = function() {
-            printResult(        
-                (x.responseText || '')
-            );
-            };
-            if (/^POST/i.test(options.method)) {
-            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            }
-            x.send(options.data);
-        }
-
-        // Bind event
-        (function() {
-            
-            document.getElementById('get').onclick = function(e) {
-                var properEmail = document.getElementById('searchBar').value;
-                var urlField = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+properEmail;
-            e.preventDefault();
-
-            if( isEmailValid == true ){
-                document.getElementById("get").disabled = true;
-                document.getElementById("get").innerText = 'Wait';
-                doCORSRequest({
-                    method: 'GET',
-                    url: urlField,
-                }, function printResult(result) {
-                    localStorage.setItem('mailDetails', result);
-                    var emailDetails = JSON.parse(localStorage.getItem('mailDetails'));
-                    if( emailDetails.length == 0 ){
-                        location.href='result.html?status='+false;
-                    }else{
-                        location.href='result.html?status='+true;
-                    }
-                });
-            }else{
-                document.getElementById("get").disabled = false;
-            }
-            
-            };
-        })();
-
-
-
-
-        // var emailInput1 = document.getElementById('searchBar');
-        // emailInput1.onfocus =  function(){
-        //     emailInput1.classList.add('searchInputfocus');
-        // }

@@ -271,6 +271,7 @@ input:focus::-webkit-input-placeholder {
 }
 form{
     margin:29px 0;
+    margin:3vw 0;
     background: rgba(0,0,0,0.1); /* To test */
 }
 

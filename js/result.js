@@ -1,6 +1,6 @@
 var emailDetails = JSON.parse(localStorage.getItem('mailDetails'));
 if( emailDetails.length == 0 ){
-    document.getElementById('content3').style.display = "none";
+    document.getElementById('content3').innerHTML = "<div id='noResults'><h2>Email not found!</h2></div>";
 }else{
     document.getElementById('fullname').innerText = emailDetails.first_name + " " + emailDetails.last_name;
     document.getElementById('description').innerText = emailDetails.description;

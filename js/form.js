@@ -1,6 +1,5 @@
-
-const form = document.querySelector("#search-form"); // select form using Id
-var email = form.elements.namedItem('email'); // select email input field
+const form = document.querySelector("#search-form");
+var email = form.elements.namedItem('email');
 var isEmailValid = false;
 
 
@@ -17,11 +16,11 @@ function myApp(formId, input, emailId, emailLabel){
         return this.emailId.value.match(mailformat);
     },
     this.onMail = function(classesList){
-        this.label.classList.add(classesList[0]); // input label effected onfocus
+        this.label.classList.add(classesList[0]);
         this.emailId.classList.add(classesList[1]);
     },
     this.offMail = function(classesList, value, rClassesList){
-        if ( value.length <= 0 || value=="" ) {this.label.classList.remove(classesList[0], classesList[1]) }  // input label effected onblur
+        if ( value.length <= 0 || value=="" ) {this.label.classList.remove(classesList[0], classesList[1]) }
         this.emailId.classList.add(rClassesList[0]);
     },
     this.validate = function(){
@@ -44,23 +43,17 @@ function myApp(formId, input, emailId, emailLabel){
         }else{    
             this.emailId.classList.remove('searchInputfocus', 'inputPositionHorizontal');
             this.emailId.classList.add("searchInputError");            
-            this.label.innerText = "Please add a valid email address";
-            this.isEmailValid = false;            
+            this.label.innerText = "Please add a valid email address";                  
             this.label.classList.add('error');
+            this.isEmailValid = false;      
         }
         
-    },
-    
-    this.searchForMail = function(){
-        // Searching for an Email
-    }
-    
+    }    
 }
     
 
-var app = new myApp("search-form", "email", "searchBar", "emailLabel"); // Object
+var app = new myApp("search-form", "email", "searchBar", "emailLabel");
 
-// Events & Handlers
 onMail = function(em){
     app.onMail(['focusText', 'searchInputfocus']);
 }
@@ -88,7 +81,6 @@ function doCORSRequest(options, printResult) {
     x.send(options.data);
 }
 
-//Self Invoking a Method // Bind event
 (function() {
     
     document.getElementById('get').onclick = function(e) {
@@ -118,4 +110,3 @@ function doCORSRequest(options, printResult) {
     };
 
 })();
-

@@ -1062,6 +1062,17 @@ text-rendering: optimizeLegibility !important;
         line-height: 24px;
     }
 
+    #searchBar{
+        height: 2.5vw;
+        margin-bottom: 2.5vw;
+        font-size:0.9em !important
+    }
+    button{
+        height: 9vw;
+    }
+    .inputPosition{
+        padding:30px 15px 15px 13px !important
+    }
     
    
 }    
@@ -1272,7 +1283,7 @@ text-rendering: optimizeLegibility !important;
         height:50px
     }
     button{
-        height: 8.5vh;
+        height: 5.5vh;
     }
     #searchBar{
         font-size: 16px;

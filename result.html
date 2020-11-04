@@ -75,7 +75,7 @@
                     <div id="formBlock">
                         <form action="" id="search-form" name="search-form">
                             <div>                                
-                                <label id='emailLabel'>Please add a valid email address</label><input placeholder="EMAIL" type="text" name="email" id="searchBar" onfocus="onMail(this.value)" onblur="offMail(this.value)" required ><button class="searchBtn" id="get">GO!</button>  
+                                <label id='emailLabel'>Please add a valid email address</label><input placeholder="EMAIL" type="text" name="email" id="searchBar" oninput="onValue(this.value)" onfocus="onMail(this.value)" onblur="offMail(this.value)" required ><button class="searchBtn" onclick="onSearch" id="get">GO!</button>  
                             </div>                                                          
                         </form>
                     </div>

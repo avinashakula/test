@@ -118,7 +118,7 @@ h2{
     letter-spacing: 0;
     text-align: center;
     line-height: 29px;
-    font-size: 1.5vw;
+    font-size: 1.66vw;
     line-height: 4vh;
 }  
 #content p span{
@@ -295,7 +295,7 @@ form{
     font-size: 3.26vw;
     margin-bottom: 2.5vh;
 }
-#content2 .containerBlock p{
+.content2Tag{
     font-family: HelveticaNeue;
     font-size: 22px;
     color: #4A4A4A;
@@ -416,7 +416,9 @@ form{
         color: #004A80;
         letter-spacing: 0;
         text-align: center;
-        margin-bottom:15px
+        font-size: 3.5vw;
+        margin-bottom: 1.5vh;
+        line-height: inherit;
     }
     #content3 h3{
         font-family: HelveticaNeue-Bold;
@@ -455,8 +457,8 @@ form{
         color: #000000;
         letter-spacing: 0;
         text-align: center;
-        line-height: 32px;
-        font-size: 1.50vw;
+        font-size: 1.66vw;
+        line-height: 4vh;
         
     }
     #resultBlock p{
@@ -640,7 +642,7 @@ text-rendering: optimizeLegibility !important;
         font-size: 1.25vw;
         line-height: 2.0vw;
     }    
-    #content2 .containerBlock p{
+    .content2Tag{
         font-family: HelveticaNeue;        
         color: #4A4A4A;
         letter-spacing: 0;        
@@ -682,15 +684,26 @@ text-rendering: optimizeLegibility !important;
         text-align: center;
         font-size: 6.3vw !important;
     } 
+    #content3 h2 {
+        font-family: HelveticaNeue-Bold;
+        font-size: 52px;
+        color: #004A80;
+        letter-spacing: 0;
+        font-size: 6.3vw !important;
+    }
     #content p{
         font-family: HelveticaNeue-Bold; /*HelveticaNeue-Bold*/
         font-size: 20px;
         color:white;
         letter-spacing: 0;
         text-align: center;
-        line-height: 25px;
-        font-size: 2.8vw;
+        font-size: 2.6vw;
+        line-height: 3.5vw;
     } 
+    #content3 p{
+        font-size: 2.6vw;
+        line-height: 3.5vw;
+    }
     #searchBar{
         width:72%
     }    
@@ -710,6 +723,7 @@ text-rendering: optimizeLegibility !important;
     }
     #services .service .information h4{
         font-size: 20px;
+        font-size: 4vw;
     }
     
    
@@ -722,15 +736,16 @@ text-rendering: optimizeLegibility !important;
         color: #004A80;
         letter-spacing: 0;
         text-align: center;
-        font-size: 6.25vw
+        font-size: 6vw;
+        margin-bottom: 3vh;
     }
-    #content2 .containerBlock p{
+    .content2Tag{
         font-family: HelveticaNeue;
         font-size: 20px;
         color: #4A4A4A;
         letter-spacing: 0;
-        line-height: 28px;
-        font-size: calc(1.16em + 0.18vw);
+        font-size: 2.6vw !important;
+        line-height: 3.6vw;
     }
     #services .service .information p{
         font-family: HelveticaNeue;
@@ -859,7 +874,32 @@ text-rendering: optimizeLegibility !important;
     }
     #rightTable div{
         width:100%
-    }    
+    }  
+    .content2Tag{
+        font-family: HelveticaNeue;
+        font-size: 18px;
+        color: #4A4A4A;
+        letter-spacing: 0;
+        font-size: 2.8vw !important;
+        line-height: 3.8vw;
+    }  
+    .circle{
+        background-color: #004A80;
+        width: 8vw !important;
+        height: 8vw !important;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .circle p{
+        color: #F6BC25 !important;
+        font-size: 3vw !important;
+        font-family: HelveticaNeue-Bold !important;
+        letter-spacing: 0 !important;
+        text-align: center;
+    }
+    
 } 
 @media( max-width:540px ){
     .circle{
@@ -898,7 +938,28 @@ text-rendering: optimizeLegibility !important;
     }
 }    
 @media( max-width:510px ){
-    .circle{
+    #content p {
+        font-family: HelveticaNeue-Bold;
+        font-size: 16px;
+        color: white;
+        letter-spacing: 0;
+        text-align: center;
+        font-size: 3.2vw;
+        line-height: 4.5vw;
+    }
+    #content3 p{
+        font-size: 3.2vw !important;
+        line-height: 4.5vw;
+    }
+    .content2Tag{
+        font-family: HelveticaNeue;
+        font-size: 18px;
+        color: #4A4A4A;
+        letter-spacing: 0;
+        font-size: 2.8vw !important;
+        line-height: 3.8vw;
+    } 
+    .table .left .circle{
         background-color: #004A80;
         width: 13vw !important;
         height: 13vw !important;
@@ -933,6 +994,8 @@ text-rendering: optimizeLegibility !important;
     #services .service .information p{
         font-size: 17px;
         line-height: 24px;
+        font-size: 3.35vw;
+        line-height: 4.8vw;
     }
 
     #services .service .left .numbers{       
@@ -997,6 +1060,8 @@ text-rendering: optimizeLegibility !important;
         letter-spacing: 0;
         line-height: 24px;
     }
+
+    
    
 }    
 @media( max-width:320px ){
@@ -1031,6 +1096,10 @@ text-rendering: optimizeLegibility !important;
         font-size: 12vw !important;
         line-height: 8vh;
     } 
+    #content3 h2{
+        font-size: 12vw !important;
+        line-height: 8vh;
+    }
     #content2 .containerBlock h2{
         font-size: 38px !important;
         line-height: 46px;
@@ -1045,11 +1114,16 @@ text-rendering: optimizeLegibility !important;
         line-height: 23px;
         font-size:5.7vw;
     } 
-    #content2 .containerBlock p{
-        font-size: 18px;
-        line-height: 28px;
-        padding-left: 15px;
-        padding-right: 15px;
+    #content3 p{
+        line-height: 23px !important;
+        font-size: 5.7vw !important;
+    }
+    .content2Tag{
+        font-family: HelveticaNeue;        
+        color: #4A4A4A;
+        letter-spacing: 0;
+        font-size: 5.8vw !important;
+        line-height: 9.2vw;
     }
     #searchBar{
         width:100%;
@@ -1073,12 +1147,15 @@ text-rendering: optimizeLegibility !important;
     }
     #services .service .information h4{
         font-size: 20px;
+        font-size: 6.3vw;
     }
     #services .service .information p{
         font-size: 16px;
         line-height: 24px;
         padding-left: 0;
         padding-right: 0;
+        font-size: 5.1vw;
+        line-height: 7.6vw;
     }
     .numberBlocks{
         vertical-align: top !important;

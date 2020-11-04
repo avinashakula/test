@@ -23,46 +23,48 @@
                     <h2>Result</h2>
                     <p id="resultP">Look at the result below to see the details of the person you’re searched for.</p>
                     <div id="resultBlock">
-                        <table>
-                            <tr>
-                                <td id="leftTable" align='center'>
+                        <div class='table'>
+                                <div id="leftTable" align='center'>
                                     <div class="userProfileImage" ><span><img src="images/user.png" alt="User" id="user" ></span></div>
-                                </td>
-                                <td id="rightTable">
-                                    <table>
-                                        <tr>
-                                            <td colspan="2">
+                                </div>
+                                <div id="rightTable">
+                                    <div class='resultsubBlock'>
+                                        
+                                            <div class='singleCol' colspan="2">
                                                 <h3 id="fullname">John Smith, 35</h3>
                                                 <p id="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </td>
+                                            </div>  
+                                            <div class='clear'></div>                                     
+                                       
+                                            <div class='multiCol'>
+                                                <div>
+                                                    <h4>Address</h4>
+                                                    <p id="address">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                </div>
+                                                <div>
+                                                    <h4>Phone Numbers</h4>
+                                                    <a href="#" id="ph1">(555) 555-5555</a>
+                                                    <a href="#" id="ph2">(555) 555-5555</a>
+                                                    <a href="#" id="ph3">(555) 555-5555</a>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class='multiCol'>
+                                                <div>
+                                                    <h4>Email</h4>
+                                                    <p id="emaili">loremipsum@dolorsit.com</p>
+                                                </div>
+                                                <div>
+                                                    <h4>Relatives</h4>
+                                                    <p id="rel1">Jane Smith</p>
+                                                    <p id="rel2">Jane Smith Jr</p>
+                                                </div>
+                                            </div>
+                                            
                                         </tr>
-                                        <tr>
-                                            <td width='50%'>
-                                                <h4>Address</h4>
-                                                <p id="address">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </td>
-                                            <td width='50%'>
-                                                <h4>Phone Numbers</h4>
-                                                <a href="#" id="ph1">(555) 555-5555</a>
-                                                <a href="#" id="ph2">(555) 555-5555</a>
-                                                <a href="#" id="ph3">(555) 555-5555</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td width='50%'>
-                                                <h4>Email</h4>
-                                                <p id="emaili">loremipsum@dolorsit.com</p>
-                                            </td>
-                                            <td width='50%'>
-                                                <h4>Relatives</h4>
-                                                <p id="rel1">Jane Smith</p>
-                                                <p id="rel2">Jane Smith Jr</p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>    
             </div>
@@ -96,6 +98,7 @@
             </div>
         </div>        
     </div>
+    <script src="js/init.js"></script>
     <script src="js/form.js"></script>
     <script src="js/result.js"></script>
 </body>
